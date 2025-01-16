@@ -1,0 +1,783 @@
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="WebPartPageExpansion" content="full" />
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="team" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="images/icono_solo.png" type="image/png">
+        <title>Intranet Hambings</title>
+    
+        
+           <!-- CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+       <link rel="stylesheet" href="css/style.css">
+    
+       <script src="js/main.js"></script>
+    
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <!-- <link href="bootstrap.min.css" rel="stylesheet">  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    
+       <!-- Libraries Stylesheet -->
+      
+       <link href="lib/animate/animate.min.css" rel="stylesheet">
+       <link href="lib/animate/animate.css" rel="stylesheet">
+       <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    
+       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+    
+    
+    
+        
+    
+
+    
+    <style>
+      .home-info {
+                margin-top: 0px;
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                display: flex;
+                flex-direction: column; /* Cambiado para alinear los elementos de arriba hacia abajo */
+                justify-content: space-between;
+                transition: background 0.5s ease-in-out; 
+                z-index: 9999 !important;
+            }
+    
+               
+        
+            .datos {
+                align-self: flex-end !important; /* Alinea este elemento en la parte inferior del contenedor principal */
+          
+            }
+            #titul{
+                align-self: center;
+                font-weight: 700;
+              
+            }
+    
+        
+            .subtitulo {
+                /* font-size:  20px; */
+                font-weight: 550;
+                font-size: 2.5vh; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    
+            }
+        
+            .center-vertically {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                
+            }
+            .shadow{
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            }
+    
+       
+    
+            .icon-small {
+                opacity: 0;
+                transition: opacity 0s ease-in-out;
+                width: 44px; 
+                height: 44px; 
+            }
+    
+            .icon-small.active {
+                opacity: 1;
+                width: 44px; 
+                height: 44px; 
+            }
+    
+            .icon-path {
+                stroke-dasharray: 100;
+                stroke-dashoffset: 100;
+                stroke: gray;
+                animation: none; /* Inicialmente sin animación */
+            }
+    
+            @keyframes draw {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+    
+            @keyframes colorChange {
+                to {
+                    stroke: white;
+                }
+            }
+    
+            .icon-small.active .icon-path {
+                animation: draw 6s forwards, colorChange 6s forwards;
+            }
+    
+    
+    
+    
+    
+            @media (max-width: 768px) {
+                .text-group {
+                    display: none; /* Oculta todos los textos por defecto en pantallas pequeñas */
+                }
+    
+                .text-group.active {
+                    display: block; /* Muestra solo el texto activo */
+                }
+    
+                .datos .col-4 {
+                    width: 100%; /* Ocupa todo el ancho disponible */
+                    text-align: start; 
+                }
+    
+            
+            }
+    
+            @media (min-width: 769px) {
+                .text-group {
+                    display: block; /* Muestra todos los textos en pantallas grandes */
+                }
+            }
+    
+            .icon-small.restart-animation .icon-path {
+                animation: none; /* Detener la animación */
+            }
+    
+            .icon-small.restart-animation .icon-path {
+                animation: draw 6s forwards, colorChange 6s forwards; /* Reiniciar la animación */
+            }
+    
+    
+    
+    </style>
+    
+    
+    
+    
+    </head>
+    
+    
+    
+    <body>
+    
+      
+    
+    
+       
+    
+        <header>
+    
+       
+          <nav class="navbar navbar-expand-lg bg-navbar fixed-top">
+            <div class="container">
+                <a  class="navbar-brand logoinicio" href="#"><img id="logo" width="210.1" height="44.726" src="images/logo_hambings_icono.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+                      <li class="nav-item primeritem">
+                        <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                    </li>
+        
+                      <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown-hover" aria-haspopup="true" aria-expanded="false">
+                          Empresa
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-hover letranegra" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="misionyvision.html"><i class="bi bi-flag"></i> Visión</a>
+                          <a class="dropdown-item" href="misionyvision.html"><i class="bi bi-eye"></i> Misión</a>
+                        </div>
+                      </li>
+    
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#politicas">Políticas</a>
+                    </li>
+    
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#servicios">Servicios</a>
+                    </li>
+    
+                
+                      <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown-hover" aria-haspopup="true" aria-expanded="false">
+                          herramientas
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-hover letranegra" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" target="_blank" href="https://hambco.sharepoint.com/sites/hambings/SitePages/BibliotecaStaff.aspx">Biblioteca Hambings Staff</a>
+                          <a class="dropdown-item" target="_blank" href="https://hambco.sharepoint.com/sites/hambings/SitePages/novedades/production/Default.aspx">HAMB Tools</a>
+                        </div>
+                      </li>
+    
+                    
+                     
+        
+                        <!-- <li class="nav-item">
+                            <a class="navbar-brand logoproyectos1" href="#"><img src="Intranet/img/" alt=""></a>
+                        </li> -->
+        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    
+    
+        <div style="height: 100vh; padding: 0 !important;" class="container-fluid pt-5 home-info mb-5">
+        
+      
+          <div style="height: 100vh;" class="d-flex align-items-center justify-content-center">
+              <div class="container-fluid pt-5">
+                  <div style="padding-left: 2%;" class="row align-items-center">
+                      <div id="titul" class="col-lg-12 text-center text-lg-start mb-lg-5">
+                          <h1 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.4); font-size: 7vh !important;  font-weight: 700;" data-wow-delay="0.5s"  class="display-4 text-white mb-4 wow slideInDown">Fortalecemos empresas mediante <br> herramientas informáticas avanzadas.</h1>
+                          <p style="padding-right: 15%; font-size: 2vh;" data-wow-delay="0.8s" class="text-white mb-4 wow slideInRight">Soporte a sistemas de información.</p>
+                          <a style="height: 5vh; font-size: 2vh;" href="#" data-wow-delay="0.3s" class="btn btn-light py-sm-2 px-sm-5 rounded-pill me-3 wow slideInRight text-center">Leer más</a>
+                          <a style="height: 5vh; font-size: 2vh;" href="#" data-wow-delay="0.4s" class="btn btn-outline-light py-sm-2 px-sm-5 rounded-pill wow slideInRight text-center">Contacto</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          
+      
+      
+      
+          <div style="height: 20vh;" class="container-fluid">
+              <div style="height: 100%;" class="datos col-lg-12 text-center text-lg-start mb-lg-5">
+                  <div id="blancoletra" style="height: 100%;" class="text-white row">
+                      
+                      
+                      <div class="text-white col-4 text-group">
+                        <div  style="height: 100%;" class="row">
+                          <div class="col-1"></div>
+                          <div class="col-2">
+                              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-small">
+                                  <path d="M44 25C44 20.5634 42.4474 16.2666 39.6114 12.8547C36.7753 9.44287 32.8347 7.13105 28.4728 6.32011C24.1109 5.50918 19.6027 6.25027 15.73 8.4149C11.8572 10.5795 8.86408 14.0312 7.26953 18.1714C5.67499 22.3116 5.57959 26.8793 6.99988 31.0824C8.42017 35.2856 11.2666 38.8592 15.0456 41.1837C18.8246 43.5081 23.2979 44.4368 27.6899 43.8087C32.0818 43.1806 36.1155 41.0353 39.0915 37.7448" 
+                                        stroke="gray" stroke-width="2" class="icon-path"></path>
+                                  <path d="M24.9412 48.9411C30.5453 48.9411 35.9728 46.9799 40.2826 43.3976C44.5923 39.8152 47.5125 34.8376 48.5368 29.3278C49.5611 23.818 48.625 18.1235 45.8908 13.2316C43.1565 8.3397 38.7965 4.55888 33.5668 2.54472C28.3371 0.530558 22.5674 0.410056 17.2581 2.20411C11.9489 3.99816 7.43484 7.59364 4.49872 12.3671C1.5626 17.1406 0.389539 22.7911 1.18294 28.3388" 
+                                        stroke="gray" stroke-width="2" class="icon-path"></path>
+                              </svg>
+                          </div>
+                          <div class="col-9">
+                             
+                            <p class="subtitulo">Administración Integral de Procesos de Negocio </p>
+                          </div>
+                          
+                            
+                        </div>
+                    </div>
+    
+                    <div class="text-white col-4 text-group">
+                        <div  style="height: 100%;" class="row">
+                          <div class="col-1"></div>
+                          <div class="col-2">
+                              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-small">
+                                  <path d="M44 25C44 20.5634 42.4474 16.2666 39.6114 12.8547C36.7753 9.44287 32.8347 7.13105 28.4728 6.32011C24.1109 5.50918 19.6027 6.25027 15.73 8.4149C11.8572 10.5795 8.86408 14.0312 7.26953 18.1714C5.67499 22.3116 5.57959 26.8793 6.99988 31.0824C8.42017 35.2856 11.2666 38.8592 15.0456 41.1837C18.8246 43.5081 23.2979 44.4368 27.6899 43.8087C32.0818 43.1806 36.1155 41.0353 39.0915 37.7448" 
+                                        stroke="gray" stroke-width="2" class="icon-path"></path>
+                                  <path d="M24.9412 48.9411C30.5453 48.9411 35.9728 46.9799 40.2826 43.3976C44.5923 39.8152 47.5125 34.8376 48.5368 29.3278C49.5611 23.818 48.625 18.1235 45.8908 13.2316C43.1565 8.3397 38.7965 4.55888 33.5668 2.54472C28.3371 0.530558 22.5674 0.410056 17.2581 2.20411C11.9489 3.99816 7.43484 7.59364 4.49872 12.3671C1.5626 17.1406 0.389539 22.7911 1.18294 28.3388" 
+                                        stroke="gray" stroke-width="2" class="icon-path"></path>
+                              </svg>
+                          </div>
+                          <div class="col-9">
+                           
+                            <p class="subtitulo">Soporte a Sistemas de Información Empresariales</p>
+                          </div>
+                          
+                            
+                        </div>
+                    </div>
+    
+                    <div class="text-white col-4 text-group">
+                        <div  style="height: 100%;" class="row">
+                          <div class="col-1"></div>
+                          <div class="col-2">
+                              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-small">
+                                  <path d="M44 25C44 20.5634 42.4474 16.2666 39.6114 12.8547C36.7753 9.44287 32.8347 7.13105 28.4728 6.32011C24.1109 5.50918 19.6027 6.25027 15.73 8.4149C11.8572 10.5795 8.86408 14.0312 7.26953 18.1714C5.67499 22.3116 5.57959 26.8793 6.99988 31.0824C8.42017 35.2856 11.2666 38.8592 15.0456 41.1837C18.8246 43.5081 23.2979 44.4368 27.6899 43.8087C32.0818 43.1806 36.1155 41.0353 39.0915 37.7448" 
+                                        stroke="gray" stroke-width="2" class="icon-path"></path>
+                                  <path d="M24.9412 48.9411C30.5453 48.9411 35.9728 46.9799 40.2826 43.3976C44.5923 39.8152 47.5125 34.8376 48.5368 29.3278C49.5611 23.818 48.625 18.1235 45.8908 13.2316C43.1565 8.3397 38.7965 4.55888 33.5668 2.54472C28.3371 0.530558 22.5674 0.410056 17.2581 2.20411C11.9489 3.99816 7.43484 7.59364 4.49872 12.3671C1.5626 17.1406 0.389539 22.7911 1.18294 28.3388" 
+                                        stroke="gray" stroke-width="2" class="icon-path"></path>
+                              </svg>
+                          </div>
+                          <div class="col-9">
+                             
+                            <p class="subtitulo">Integración de Servicios de Negocio y Aplicación</p>
+                          </div>
+                          
+                            
+                        </div>
+                    </div>
+    
+                    
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+          
+      <script>
+        var images = [
+            'images/carousel/img-5.png',
+            'images/carousel/img-2.jpg',
+            'images/carousel/img-3.jpg',
+            
+        ];
+    
+        var currentImageIndex = 0;
+        var intervalTime = 8000; // Cambiar cada 8 segundos
+    
+        function changeBackground() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            var imageUrl = 'url(' + images[currentImageIndex] + ')';
+            console.log("Mostrando imagen:", images[currentImageIndex]); // Verifica el orden
+            document.querySelector('.home-info').style.backgroundImage = imageUrl;
+        }
+    
+        // Cambiar el fondo inicialmente
+        changeBackground();
+    
+        // Cambiar el fondo cada cierto intervalo de tiempo
+        setInterval(changeBackground, intervalTime);
+    
+    
+        document.addEventListener("DOMContentLoaded", function() {
+        const icons = document.querySelectorAll('.icon-small');
+        const textGroups = document.querySelectorAll('.text-group');
+        let currentIconIndex = 0;
+        let currentTextIndex = 0;
+    
+        function showNextIcon() {
+            // Ocultar todos los íconos y textos
+            icons.forEach(icon => {
+                icon.classList.remove('active');
+                icon.classList.remove('restart-animation'); // Remover clase de reinicio
+            });
+            textGroups.forEach(text => text.classList.remove('active'));
+    
+            // Mostrar el siguiente ícono y texto
+            icons[currentIconIndex].classList.add('active');
+            textGroups[currentTextIndex].classList.add('active');
+    
+            // Animar el ícono actual
+            const currentIcon = icons[currentIconIndex];
+            currentIcon.classList.add('restart-animation'); // Añadir clase de reinicio
+    
+            // Mover al siguiente ícono y texto
+            currentIconIndex = (currentIconIndex + 1) % icons.length;
+            currentTextIndex = (currentTextIndex + 1) % textGroups.length;
+        }
+    
+        // Iniciar con el primer ícono y texto
+        showNextIcon();
+    
+        // Cambiar y animar cada 8 segundos
+        setInterval(showNextIcon, 8000);
+    });
+    
+    
+    </script>
+    
+    
+        
+    
+    
+        </header>
+    
+    
+    
+    
+        <main>
+          <div class="container---xxl">
+    
+                <!-- Politicas inicio -->
+        <div id="politicas" style="background-color: #F5F5F5;" style=" min-height: 100vh !important;" class="container-fluid py-5">
+            <div class="container-fluid py-2">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-12 d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                        <h1 class="mb-4 text-center fw-bold mt-4" style="color: #02193A; font-size: 5vh;">Nuestras políticas</h1>
+                    </div>                
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row g-2">
+                                    <div class="col wow fadeIn d-flex align-items-stretch" data-wow-delay="0.1s">
+                                        <div style="font-size: 2vh;" class="policy-item d-flex flex-column justify-content-center text-center rounded">
+                                            <div class="service-icon btn-square">
+                                             <i class="bi bi-tree fs-1"></i>
+    
+                                            </div>
+                                            <h5 style="font-size: 2.5vh;" class="mb-3">Política ambiental</h5>
+                                            <!-- <p class="mb-4"><i class="bi bi-check text-success fs-4"></i>Construcción de una única verdad.</p> -->
+                                            <a class="btn px-3 mt-auto mx-auto" href="politicas/POLITICA AMBIENTAL.docx">Leer mas</a>
+                                        </div>
+                                    </div>
+                                    <div class="col wow fadeIn d-flex align-items-stretch" data-wow-delay="0.1s">
+                                        <div style="font-size: 2vh;" class="policy-item d-flex flex-column justify-content-center text-center rounded">
+                                            <div class="service-icon btn-square">
+                                                <i class="bi bi-x-circle fs-1"></i>
+                                            </div>
+                                            <h5 style="font-size: 2.5vh;" class="mb-3">Política de no consumo de alcohol, droga y tabaco</h5>
+                                            <!-- <p class="mb-4"><i class="bi bi-check text-success fs-4"></i>Comprender el estado actual y pasados de la organización.</p> -->
+                                            <a class="btn px-3 mt-auto mx-auto" href="politicas/POLITICA DE NO CONSUMO DE ALCOHOL DROGA Y TABACO.docx">Leer mas</a>
+                                        </div>
+                                    </div>
+                                    <div class="col wow fadeIn d-flex align-items-stretch" data-wow-delay="0.1s">
+                                        <div style="font-size: 2vh;" class="policy-item d-flex flex-column justify-content-center text-center rounded">
+                                            <div class="service-icon btn-square">
+                                                <i class="bi bi-shield-plus fs-1"></i>
+                                            </div>
+                                            <h5 style="font-size: 2.5vh;" class="mb-3">Política de SST</h5>
+                                            <!-- <p class="mb-4"><i class="bi bi-check text-success fs-4"></i>Visualizaciones de datos que sean intuitivas y fáciles de entender.</p> -->
+                                            <a class="btn px-3 mt-auto mx-auto" href="politicas/POLITICA DE SST ACTUAL MARZO 2024.docx">Leer mas</a>
+                                        </div>
+                                    </div>
+                                    <div class="col wow fadeIn d-flex align-items-stretch" data-wow-delay="0.1s">
+                                        <div style="font-size: 2vh;" class="policy-item d-flex flex-column justify-content-center text-center rounded">
+                                            <div class="service-icon btn-square">
+                                                <i class="bi bi-car-front fs-1"></i>
+                                            </div>
+                                            <h5 style="font-size: 2.5vh;" class="mb-3">Política de seguridad vial</h5>
+                                            <!-- <p class="mb-4"><i class="bi bi-check text-success fs-4"></i>Modelado estadístico para predecir eventos futuros y tendencias.</p> -->
+                                            <a class="btn px-3 mt-auto mx-auto" href="politicas/POLÍTICA DE SEGURIDAD VIAL.docx">Leer mas</a>
+                                        </div>
+                                    </div>
+                                    <div class="col wow fadeIn d-flex align-items-stretch" data-wow-delay="0.1s">
+                                        <div style="font-size: 2vh;" class="policy-item d-flex flex-column justify-content-center text-center rounded">
+                                            <div class="service-icon btn-square">
+                                                <i class="bi bi-people fs-1"></i>
+                                            </div>
+                                            <h5 style="font-size: 2.5vh;" class="mb-3">Políticas de Responsabilidad Social Empresarial y de Derechos Humanos</h5>
+                                            <!-- <p class="mb-4"><i class="bi bi-check text-success fs-4"></i>Proporcionar análisis y recomendaciones.
+                                            </p> -->
+                                           
+                                            <a class="btn px-3 mt-auto mx-auto" href="politicas/Poliìticas de Responsabilidad Social Empresarial y de Derechos Humanos.docx">Leer mas</a>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col wow fadeIn d-flex align-items-stretch" data-wow-delay="0.1s">
+                                        <div style="font-size: 2vh;" class="policy-item d-flex flex-column justify-content-center text-center rounded">
+                                            <div class="service-icon btn-square">
+                                                <i class="bi bi-tools fs-1"></i>
+                                            </div>
+                                            <h5 style="font-size: 2.5vh;" class="mb-3">Reglamento de higiene y seguridad industrial</h5>
+                                            <!-- <p class="mb-4"><i class="bi bi-check text-success fs-4"></i>Proporcionar análisis y recomendaciones.
+                                            </p> -->
+                                           
+                                            <a class="btn px-3 mt-auto mx-auto" href="politicas/REGLAMENTO DE HSI.docx">Leer mas</a>
+                                        </div>
+                                    </div>
+                                    <!-- Repite el mismo formato para las otras tarjetas -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Politicas fin -->
+    
+    
+          <!-- Service Start -->
+    <div id="servicios" class="container-fluid service py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 1000px;">
+                <h4 class="fw-bold" style="color: #02193A;">Nuestros servicios</h4>
+                <h1 class="display-4 mb-4 fw-bold">Ofrecemos los mejores servicios</h1>
+                <p class="mb-0">Hambings SAS ofrece soluciones integrales en soporte TI, especializándose en la gestión de infraestructura tecnológica, mantenimiento de sistemas de información, y servicios de consultoría tecnológica para optimizar la operación empresarial.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/img-blanca.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="bi bi-bar-chart-line fs-1"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Inteligencia de negocios</a>
+                                <p class="mb-4">Ayudamos a transformar datos en información útil para la toma de decisiones estratégicas.</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 fw-bold" href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/img-blanca.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="bi bi-gear fs-1"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Administración de procesos de negocio</a>
+                                <p class="mb-4">Optimización y automatización de procesos para mejorar la eficiencia y productividad empresarial.</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 fw-bold" href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/img-blanca.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="bi bi-database-fill fs-1"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Minería de datos</a>
+                                <p class="mb-4">Extracción de patrones y tendencias ocultas en grandes volúmenes de datos para obtener insights valiosos.</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 fw-bold" href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/img-blanca.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="bi bi-tools fs-1"></i> 
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Gestión de activos</a>
+                                <p class="mb-4">Control eficiente y monitoreo de los activos tecnológicos para maximizar su rendimiento y vida útil.</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 fw-bold" href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="1.0s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="images/img-blanca.png" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="bi bi-diagram-3 fs-1"></i> 
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Integración de servicios de negocio y aplicación</a>
+                                <p class="mb-4">Unificación de sistemas y aplicaciones para una operación empresarial más coordinada y eficiente.</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4 fw-bold" href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+    
+    
+    
+    
+             <!-- Team Start -->
+            <div class="container-fluid team pb-5">
+            <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 1200px;">
+            <h4 class="fw-bold" style="color: #02193A;">Nuestro equipo administrativo</h4>
+            <h1 class="display-5 mb-4 fw-bold">Conozca a los miembros de nuestro equipo</h1>
+            </div>
+            <div class="row g-4">
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="images/personas/ejemplo_hombre.jpg" class="img-fluid rounded-top w-100" alt="">
+                    <div class="team-icon">
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="mailto:hugo.mendoza@hambings.com.co"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="msteams://teams.microsoft.com/l/chat/0/0?users=hugo.mendoza@hambings.com.co"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft-teams" viewBox="0 0 16 16">
+                        <path d="M9.186 4.797a2.42 2.42 0 1 0-2.86-2.448h1.178c.929 0 1.682.753 1.682 1.682zm-4.295 7.738h2.613c.929 0 1.682-.753 1.682-1.682V5.58h2.783a.7.7 0 0 1 .682.716v4.294a4.197 4.197 0 0 1-4.093 4.293c-1.618-.04-3-.99-3.667-2.35Zm10.737-9.372a1.674 1.674 0 1 1-3.349 0 1.674 1.674 0 0 1 3.349 0m-2.238 9.488-.12-.002a5.2 5.2 0 0 0 .381-2.07V6.306a1.7 1.7 0 0 0-.15-.725h1.792c.39 0 .707.317.707.707v3.765a2.6 2.6 0 0 1-2.598 2.598z"/>
+                        <path d="M.682 3.349h6.822c.377 0 .682.305.682.682v6.822a.68.68 0 0 1-.682.682H.682A.68.68 0 0 1 0 10.853V4.03c0-.377.305-.682.682-.682Zm5.206 2.596v-.72h-3.59v.72h1.357V9.66h.87V5.945z"/>
+                        </svg></a>
+                        
+                    </div>
+                </div>
+                <div class="team-title p-4">
+                    <h4 class="mb-0">Hugo Mendoza</h4>
+                    <p class="mb-0">Gerente</p>
+                </div>
+            </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="images/personas/ejemplo_mujer.jpg" class="img-fluid rounded-top w-100" alt="">
+                    <div class="team-icon">
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="mailto:capitalhumano@hambings.com.co"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="msteams://teams.microsoft.com/l/chat/0/0?users=capitalhumano@hambings.com.co"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft-teams" viewBox="0 0 16 16">
+                        <path d="M9.186 4.797a2.42 2.42 0 1 0-2.86-2.448h1.178c.929 0 1.682.753 1.682 1.682zm-4.295 7.738h2.613c.929 0 1.682-.753 1.682-1.682V5.58h2.783a.7.7 0 0 1 .682.716v4.294a4.197 4.197 0 0 1-4.093 4.293c-1.618-.04-3-.99-3.667-2.35Zm10.737-9.372a1.674 1.674 0 1 1-3.349 0 1.674 1.674 0 0 1 3.349 0m-2.238 9.488-.12-.002a5.2 5.2 0 0 0 .381-2.07V6.306a1.7 1.7 0 0 0-.15-.725h1.792c.39 0 .707.317.707.707v3.765a2.6 2.6 0 0 1-2.598 2.598z"/>
+                        <path d="M.682 3.349h6.822c.377 0 .682.305.682.682v6.822a.68.68 0 0 1-.682.682H.682A.68.68 0 0 1 0 10.853V4.03c0-.377.305-.682.682-.682Zm5.206 2.596v-.72h-3.59v.72h1.357V9.66h.87V5.945z"/>
+                        </svg></a>
+                    </div>
+                </div>
+                <div class="team-title p-4">
+                    <h4 class="mb-0">Nora Escobar</h4>
+                    <p class="mb-0">Directora de RRHH</p>
+                </div>
+            </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="images/personas/ejemplo_mujer.jpg" class="img-fluid rounded-top w-100" alt="">
+                    <div class="team-icon">
+                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="mailto:contabilidad@hambings.com.co"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="msteams://teams.microsoft.com/l/chat/0/0?users=contabilidad@hambings.com.co"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft-teams" viewBox="0 0 16 16">
+                        <path d="M9.186 4.797a2.42 2.42 0 1 0-2.86-2.448h1.178c.929 0 1.682.753 1.682 1.682zm-4.295 7.738h2.613c.929 0 1.682-.753 1.682-1.682V5.58h2.783a.7.7 0 0 1 .682.716v4.294a4.197 4.197 0 0 1-4.093 4.293c-1.618-.04-3-.99-3.667-2.35Zm10.737-9.372a1.674 1.674 0 1 1-3.349 0 1.674 1.674 0 0 1 3.349 0m-2.238 9.488-.12-.002a5.2 5.2 0 0 0 .381-2.07V6.306a1.7 1.7 0 0 0-.15-.725h1.792c.39 0 .707.317.707.707v3.765a2.6 2.6 0 0 1-2.598 2.598z"/>
+                        <path d="M.682 3.349h6.822c.377 0 .682.305.682.682v6.822a.68.68 0 0 1-.682.682H.682A.68.68 0 0 1 0 10.853V4.03c0-.377.305-.682.682-.682Zm5.206 2.596v-.72h-3.59v.72h1.357V9.66h.87V5.945z"/>
+                        </svg></a>
+                    </div>
+                </div>
+                <div class="team-title p-4">
+                    <h4 class="mb-0">Oriana Quintero</h4>
+                    <p class="mb-0">Directora de contabilidad</p>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="images/personas/ejemplo_hombre.jpg" class="img-fluid rounded-top w-100" alt="">
+                    <div class="team-icon">
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="#"><i class="bi bi-envelope"></i></a>
+                        <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft-teams" viewBox="0 0 16 16">
+                        <path d="M9.186 4.797a2.42 2.42 0 1 0-2.86-2.448h1.178c.929 0 1.682.753 1.682 1.682zm-4.295 7.738h2.613c.929 0 1.682-.753 1.682-1.682V5.58h2.783a.7.7 0 0 1 .682.716v4.294a4.197 4.197 0 0 1-4.093 4.293c-1.618-.04-3-.99-3.667-2.35Zm10.737-9.372a1.674 1.674 0 1 1-3.349 0 1.674 1.674 0 0 1 3.349 0m-2.238 9.488-.12-.002a5.2 5.2 0 0 0 .381-2.07V6.306a1.7 1.7 0 0 0-.15-.725h1.792c.39 0 .707.317.707.707v3.765a2.6 2.6 0 0 1-2.598 2.598z"/>
+                        <path d="M.682 3.349h6.822c.377 0 .682.305.682.682v6.822a.68.68 0 0 1-.682.682H.682A.68.68 0 0 1 0 10.853V4.03c0-.377.305-.682.682-.682Zm5.206 2.596v-.72h-3.59v.72h1.357V9.66h.87V5.945z"/>
+                        </svg></a>
+                        
+                    </div>
+                </div>
+                <div class="team-title p-4">
+                    <h4 class="mb-0">Otra persona</h4>
+                    <p class="mb-0">Ingeniero</p>
+                </div>
+            </div>
+            </div>
+    
+    
+    
+    
+    
+            </div>
+            </div>
+            </div>
+            <!-- Team End -->
+      
+    
+    
+            
+    
+        </div>
+    
+    
+        </main>
+    
+     
+    
+    
+    
+    
+        <footer>
+          <!-- Footer Start -->
+          <div class="container-fluid bg-light footer mt-3 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5></h5>
+                    <div class="row">
+                      
+                        <div class="col-md-12 wow fadeInUp" style="font-size: 13px !important;">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4" data-wow-delay="0.4s">
+                                    <h3 style="font-size: 14px;" class="text-dark"><b>CONTÁCTANOS</b></h3>
+                                    <p><i class="bi bi-geo-alt"></i> <strong>Dirección:</strong> Calle 12 #9-09 Villanueva, La Guajira</p>
+                                    <p><i class="bi bi-telephone"></i> <strong>Celular:</strong> +57 3174789256 / +57 3126819744</p>
+                                    <p><i class="bi bi-envelope"></i> <strong>Email Gerente: </strong><a href="mailto:Hugo.mendoza@hambings.com.co?subject=Soporte%20Sitio%20de%20Hambings">Hugo.mendoza@hambings.com.co</a></p>
+                                    <p><i class="bi bi-envelope"></i> <strong>Email RRHH: </strong><a href="mailto:capitalhumano@hambings.com.co?subject=Soporte%20Sitio%20de%20Hambings">capitalhumano@hambings.com.co</a></p>
+                                    
+                                  </div>
+    
+                                    <div class="col-md-3" data-wow-delay="0.4s">
+                                      <h3 style="font-size: 14px;" class="text-dark"><b>EMPRESA</b></h3>
+                                      <a href="misionyvision.aspx" class="link-item">
+                                        <i class="bi bi-flag"></i> Visión
+                                    </a>
+                                    <a href="misionyvision.aspx" class="link-item">
+                                        <i class="bi bi-eye"></i> Misión
+                                    </a>
+                                    
+                                      
+                                    
+                                      </div>
+                                <div class="col-md-3" data-wow-delay="0.8s">
+                                    <h3 style="font-size: 14px;" class="text-dark"><b>SERVICIOS</b></h3>
+                                    <p><i class="bi bi-bar-chart"></i> Inteligencia de negocios</p>
+                                    <p><i class="bi bi-diagram-3"></i> Administración de procesos de negocio</p>
+                                    <p><i class="bi bi-search"></i> Minería de datos</p>
+                                    <p><i class="bi bi-box-seam"></i> Gestión de activos</p>
+                                    <p><i class="bi bi-arrows-angle-contract"></i> Integración de servicios de negocio y aplicación</p>
+    
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center mt-4">Copyright © Hambings. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+     <!-- Footer End -->
+     </footer>
+    
+    
+    
+    
+    
+    
+        <!-- JavaScript -->
+        <script src="lib/wow/wow.min.js"></script> 
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    
+            <!-- <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="lib/counterup/counterup.min.js"></script> -->
+        <script src="js/main.js"></script>
+        
+    </body>
+    
+    </html>
+    
